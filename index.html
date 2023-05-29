@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
+<header>
+  <script src="https://cdn.jsdelivr.net/npm/i18next/dist/umd/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.1/i18nextHttpBackend.min.js"></script>
+</header>
   <head>
     <title>Gabriel Scheffer de Souza</title>
     
@@ -14,10 +18,10 @@
     <style>
       html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </style>
-    
+
   </head>
 
-  <body class="w3-light-grey" cz-shortcut-listen="true">
+  <body class="w3-dark-grey" cz-shortcut-listen="true">
   
     <!-- Page Container -->
     <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -31,6 +35,14 @@
           <div class="w3-white w3-text-grey w3-card-4">
             <div class="w3-container">
               <h2>Gabriel Scheffer de Souza</h2>
+              <label class="w3-margin-right">
+                <input type="radio" name="language" id="englishRadio" value="english" checked onchange="changeLanguage('en')">
+                English
+              </label>
+              <label>
+                <input type="radio" name="language" id="portugueseRadio" value="portuguese" onchange="changeLanguage('pt')">
+                Português
+              </label>
             </div>
             <div class="w3-container">
               <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-green"></i>Senior Technical Support Engineer</p>
@@ -170,7 +182,7 @@
               <br>
 
               <p class="w3-large">
-                <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-green"></i>Other</b>
+                <b class="translate" data-i18n="others"><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-green"></i>Others</b>
               </p>
               <p>Java</p>
               <div class="w3-light-grey w3-round-xlarge w3-small">
@@ -187,7 +199,7 @@
               <br>
   
               <p class="w3-large w3-text-theme">
-                <b><i class="fa fa-globe fa-fw w3-margin-right w3-text-green"></i>Idiomas</b>
+                <b class="translate" data-i18n="languages"><i class="fa fa-globe fa-fw w3-margin-right w3-text-green"></i>Languages</b>
               </p>
               <p>English</p>
               <div class="w3-light-grey w3-round-xlarge">
@@ -208,78 +220,53 @@
         <div class="w3-twothird">
     
           <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-terminal fa-fw w3-margin-right w3-xxlarge w3-text-green"></i>About</h2>
-            <p>Bachelor on Computer Science in 2014, 10 years of experience with Linux operating systems using both Cloud and On Premises environments, where 2+ years of DevOps and 2,5+ years of SRE.<br>
-              <br>
-              Currently working fully remote on support cases for Red Hat OpenShift in the last 2,5 years, using K8s, curl, git, intensive troubleshooting to investigate customer cases on different mission critical environments, like AWS, Azure, GCP, VSphere, OpenStack, Bare Metal.<br>
-              <br>
-              Looking for an international job opportunity that brings new challenges and use my skills in IaC, Linux, Kubernetes, middleware troubleshooting and mission critical environments.<br>
-              <br>
-              Recruiter<br>
-               Note: You might see recent experience in support, but my core role was always System Administration, with hands-on.<br>
-              I'm shifting back my career to what I do best in Production systems which is SRE, Infrastructure as Code, focusing on High availability, Monitoring, Capacity Planning and preemptive tasks.<br>
-              <br>
-              Soft Skills:<br>
-              - Independent and proactive suggest and implement ideas<br>
-              - Patience and collaboration with teams<br>
-              - Handling outage and critical situations with a cool head<br>
-              - Understanding customer urgency and impact<br>
-              <br>
-              Career goals:<br>
-              - SRE (Site Reliability Engineering)<br>
-              - Server Administration;<br>
-              - Information Security</p>
+            <h2 class="w3-text-grey w3-padding-16 translate" data-i18n="about">
+              <i class="fa fa-terminal fa-fw w3-margin-right w3-xxlarge w3-text-green"></i>About
+            </h2>
+            <p class="translate" data-i18n="profile">Bachelor on Computer Science in 2014, 10 years of experience with Linux operating systems using both Cloud and On Premises environments, where 2+ years of DevOps and 2.5+ years of SRE.<br><br> Currently working fully remote on support cases for Red Hat OpenShift in the last 2.5 years, using K8s, curl, git, intensive troubleshooting to investigate customer cases on different mission critical environments, like AWS, Azure, GCP, VSphere, OpenStack, Bare Metal.<br><br> Looking for an international job opportunity that brings new challenges and use my skills in IaC, Linux, Kubernetes, middleware troubleshooting and mission critical environments.<br><br> <b>Recruiter</b><br> Note: You might see recent experience in support, but my core role was always System Administration, with hands-on.<br> I'm shifting back my career to what I do best in Production systems which is SRE, Infrastructure as Code, focusing on High availability, Monitoring, Capacity Planning and preemptive tasks.<br><br> Soft Skills:<br> - Independent and proactive suggest and implement ideas<br> - Patience and collaboration with teams<br> - Handling outage and critical situations with a cool head<br> - Understanding customer urgency and impact<br><br> Career goals:<br> - SRE (Site Reliability Engineering)<br> - Server Administration;<br> - Information Security</p>
           </div>
 
           <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h2 class="w3-text-grey w3-padding-16">
+            <h2 class="w3-text-grey w3-padding-16 translate" data-i18n="work-experience">
               <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-green"></i>Work Experience
             </h2>
             <div class="w3-container">
               <h5 class="w3-opacity"><b>Red Hat</b></h5>
-              <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>10/2020 - <span class="w3-tag w3-green w3-round">Present</span></h6>
-              <p>Woking remote for Openshift specialty team. Using tools like <b>cURL, Git, CRIO, Kubernetes</b> to investigate and <b>troubleshoot</b> deep technical issues Serving as a senior member of the team, working large numbers of complex cases. Doing first contact in customer interactions, including investigation, troubleshooting, and resolution of cases. Managing workload to ensure that all customer issues are handled and resolved within <b>SLA</b>. Analyzing upstream development against current customer-reported defects and file new bugs to the Engineering Team Working closely with Red Hat's development engineering team and assist production support engineers and technical account managers Selecting shortest methods and techniques to obtain solutions Maintaining a commitment to providing the best experience possible for Red Hat's customers.</p>
+              <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>10/2020 - <span class="w3-tag w3-green w3-round translate" data-i18n="present">Present</span></h6>
+              <p class="translate" data-i18n="redhat">Working remote for Openshift specialty team. Using tools like <b>cURL, Git, CRIO, Kubernetes</b> to investigate and <b>troubleshoot</b> deep technical issues. Serving as a senior member of the team, working large numbers of complex cases. Doing first contact in customer interactions, including investigation, troubleshooting, and resolution of cases. Managing workload to ensure that all customer issues are handled and resolved within <b>SLA</b>. Analyzing upstream development against current customer-reported defects and file new bugs to the Engineering Team. Participating closely with Red Hat's development engineering team and assist production support engineers and technical account managers. Selecting shortest methods and techniques to obtain solutions. Maintaining a commitment to providing the best experience possible for Red Hat's customers.</p>
               <hr>
             </div>
             <div class="w3-container">
               <h5 class="w3-opacity"><b>Martin Brower Brasil</b></h5>
               <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>10/2019 - 09/2020</h6>
-              <p>Daily operations and management of Linux Servers, like <b>CentOS, Red Hat Enterprise Linux. Middleware</b> support and <b>troubleshoot</b> of the web systems with <b>JBoss6, Wildfly, Apache Httpd, Citrix ADC, Zabbix and Datadog (APM)</b>.  Provisioning and configuration of infrastructure using  <b>IaC (Ansible) and VMWare Vcenter</b>. Some knowledge of hyperconvergence acquired on <b>Nutanix</b> nodes.  Deploy of security compliances and Red Hat Satellite.</p>
+              <p class="translate" data-i18n="martinbrower">Daily operations and management of Linux Servers, like <b>CentOS, Red Hat Enterprise Linux. Middleware</b> support and <b>troubleshoot</b> of the web systems with <b>JBoss6, Wildfly, Apache Httpd, Citrix ADC, Zabbix and Datadog (APM)</b>.  Provisioning and configuration of infrastructure using  <b>IaC (Ansible) and VMWare Vcenter</b>. Some knowledge of hyperconvergence acquired on <b>Nutanix</b> nodes.  Deploy of security compliances and Red Hat Satellite.</p>
             </div>
             <div class="w3-container">
               <h5 class="w3-opacity"><b>Professional Freelancer</b></h5>
               <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>03/2019 - 10/2019</h6>
-              <p>Consulting and mentoring contracts for customers. Creating solutions involving GCP, AWS, Openshift, Linux, Logging and Monitoring.</p>
+              <p class="translate" data-i18n="freelance-1">Consulting and mentoring contracts for customers. Creating solutions involving GCP, AWS, Openshift, Linux, Logging and Monitoring.</p>
             </div>
             <div class="w3-container">
               <h5 class="w3-opacity"><b>Delivare Ltda.</b></h5>
               <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>03/2019 - 10/2019</h6>
-              <p>Startup focused to develop solutions to make easier to buy groceries online and ways to make customers get in touch with supermarkets. Creating a platform for marketplace with partnership with local supermarkets. Using my knowledge of <b>Docker, Kubernetes, OpenShift Origin and Jenkins</b>. I built the whole project infrastructure based on <b>Google Cloud Platform(GCP)</b> hosted in North America using <b>Ansible</b> to manage the OpenShift Origin on top of Docker. And <b>Continuous Integration</b> to manage, deploy our product to <b>Test and Production Environments</b>. A <b>Slack</b> as a communication tool, also I created a <b>bot</b> for it, to automatically trigger jobs on Jenkins and other infrastructure scripts.</p>
+              <p class="translate" data-i18n="delivare">Startup focused to develop solutions to make easier to buy groceries online and ways to make customers get in touch with supermarkets. Creating a platform for marketplace with partnership with local supermarkets. Using my knowledge of <b>Docker, Kubernetes, OpenShift Origin and Jenkins</b>. I built the whole project infrastructure based on <b>Google Cloud Platform(GCP)</b> hosted in North America using <b>Ansible</b> to manage the OpenShift Origin on top of Docker. And <b>Continuous Integration</b> to manage, deploy our product to <b>Test and Production Environments</b>. A <b>Slack</b> as a communication tool, also I created a <b>bot</b> for it, to automatically trigger jobs on Jenkins and other infrastructure scripts.</p>
             </div>
             <div class="w3-container">
               <h5 class="w3-opacity"><b>Betha Sistemas</b></h5>
               <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>03/2019 - 10/2019</h6>
-              <p>I've been responsible for planning, deploy and management of a large infrastructure of Linux servers running J2EE application servers, both in public and private cloud environments. I was the resource accountable for system integration and the security policies applied to the production environment.<br>
-                Became leader of an infrastructure project to deploy <b>OpenShift</b> Origin among with <b>Docker, Docker Registry, Router HA using CentOS</b> on both horizontal and vertical hardware scaling for availability. For better understanding had do study the <b>Kubernetes</b> architecture. <br>
-                I’ve also developed solutions for control and maintenance of infrastructure applications, which includes <b>Java, RHEL, tools such as JBoss, Apache Httpd, Zabbix, Jenkins, Sonar, Subversion</b> and more.<br>
-                Creating automated scripts, templates and interfaces to continuous improvement of applications. Performing testing, debugging and documentation for new and existing systems.<br>
-                Monitoring of tests plans for current and new applications using the <b>New Relic</b>.<br>
-                Conducted project analysis of system needs and client requirements in coordination with another team.<br>
-                Participated in a project for <b>Continuous Integration and Delivery</b> exploring the use of distributed <b>Jenkins CI</b> and slave agents for compiling with <b>Maven, Java, PowerBuilder, database rollings with Liquibase, Codehaus Cargo and Delivery Pipeline</b> for end users.</p>
+              <p class="translate" data-i18n="betha">I've been responsible for planning, deploy and management of a large infrastructure of Linux servers running J2EE application servers, both in public and private cloud environments. I was the resource accountable for system integration and the security policies applied to the production environment.<br> Became leader of an infrastructure project to deploy <b>OpenShift</b> Origin among with <b>Docker, Docker Registry, Router HA using CentOS</b> on both horizontal and vertical hardware scaling for availability. For better understanding I studied the <b>Kubernetes</b> architecture. <br> I’ve also developed solutions for control and maintenance of infrastructure applications, which includes <b>Java, RHEL, tools such as JBoss, Apache Httpd, Zabbix, Jenkins, Sonar, Subversion</b> and more.<br> Creating automated scripts, templates and interfaces to continuous improvement of applications. Performing testing, debugging and documentation for new and existing systems.<br> Monitoring of tests plans for current and new applications using the <b>New Relic</b>.<br> Conducted project analysis of system needs and client requirements in coordination with another team.<br> Participated in a project for <b>Continuous Integration and Delivery</b> exploring the use of distributed <b>Jenkins CI</b> and slave agents for compiling with <b>Maven, Java, PowerBuilder, database versioning with Liquibase, Codehaus Cargo and Delivery Pipeline</b> for end users.</p>
             </div>
           </div>
   
           <div class="w3-container w3-card w3-white">
-            <h2 class="w3-text-grey w3-padding-16">
+            <h2 class="w3-text-grey w3-padding-16 translate" data-i18n="education">
               <i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-green"></i>Education
             </h2>
             <div class="w3-container">
               <h5 class="w3-opacity"><b>Digital Innovation One (DIO)</b></h5>
-              <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>05/2023 - <span class="w3-tag w3-green w3-round">Present</span></h6>
-              <p>
-                Largest open IT education platform in Latin America, with over 1 million users.
-                 DIO has partnerships with some of the most innovative companies in the world, providing immersive teaching experiences
-                  methods with a focus on employability. In this context, here are my main certificates:
+              <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>05/2023 - <span class="w3-tag w3-green w3-round translate" data-i18n="present">Present</span></h6>
+              <p class="translate" data-i18n="dio">
+                Largest open IT education platform in Latin America, with over 1 million users. DIO has partnerships with some of the most innovative companies in the world, providing immersive teaching experiences methods with a focus on employability. In this context, here are my main certificates:
               </p>
               <ul>
                 <li><a href="https://www.dio.me/certificate/B6DAE6D0" target="_blank">Formation: Kubernetes Fundamentals (19h)</a></li>
@@ -289,7 +276,7 @@
             <div class="w3-container">
               <h5 class="w3-opacity"><b>Red Hat</b></h5>
               <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>11/2020 - 12/2020</h6>
-              <p>
+              <p class="translate" data-i18n="redhat-certification">
                 Red Hat, Inc. is an American software company that provides open source software products to enterprises and is a subsidiary of IBM. Founded in 1993, Red Hat has its corporate headquarters in Raleigh, North Carolina, with other offices worldwide. Below are some of my main certificates:</p>
               <ul>
                 <li><a href="https://rhtapps.redhat.com/verify/?certId=200-159-937" target="_blank">Red Hat Certified Engineer (RHCE)</a></li>
@@ -300,8 +287,8 @@
             <div class="w3-container">
               <h5 class="w3-opacity"><b>4 Linux</b></h5>
               <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>07/2016 - 10/2016</h6>
-              <p>
-                4Linux is the market leader in Linux courses. It also offers AWS, Azure and GCP cloud and Python language courses. Reference in IT services based on open source software with +20 years of experience in the market, +200,000 students trained and 5,228 companies assisted. Below are some of my Linux certificates:</p>
+              <p class="translate" data-i18n="4linux-course">
+                4Linux is the market leader in Linux courses. It also offers AWS, Azure and GCP cloud and Python language courses. Reference in IT services based on open source software with +20 years of experience in the market, +200,000 students trained. Below are some of my Linux certificates:</p>
               <ul>
                 <li><a href="https://certificados.4linux.com.br/GerarCertificado.php?id=4L445000026184" target="_blank">4450 - Linux Fundamentals in Cloud (40h)</a></li>
                 <li><a href="https://certificados.4linux.com.br/GerarCertificado.php?id=4L445100026184" target="_blank">4451 - Linux Security SysAdmin in Cloud (40h)</a></li>
@@ -312,14 +299,14 @@
             <div class="w3-container">
               <h5 class="w3-opacity"><b>Universidade do Extremo Sul Catarinense</b></h5>
               <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>08/2009 - 08/2014</h6>
-              <p>
+              <p class="translate" data-i18n="university">
                 Bachelor degree of Computer Science.
               </p>
             </div>
           </div>
 
           <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h2 class="w3-text-grey w3-padding-16">
+            <h2 class="w3-text-grey w3-padding-16 translate" data-i18n="projects">
               <i class="fa fa-git fa-fw w3-margin-right w3-xxlarge w3-text-green"></i>Projects
             </h2>
             <div class="w3-container">
@@ -327,7 +314,7 @@
                 <i class="fa fa-github fa-fw w3-margin-right"></i>
                 <a href="https://github.com/gabrielscheffer/ansible-tools" target="_blank">gabrielscheffer/ansible-tools</a>
               </h6>
-              <p>Ansible roles and playbooks developed on my own during my career as SRE/Sysadmin.</p>
+              <p class="translate" data-i18n="ansible-tools-project">Ansible roles and playbooks developed on my own during my career as SRE/Sysadmin.</p>
               <hr>
             </div>
             <div class="w3-container">
@@ -335,7 +322,7 @@
                 <i class="fa fa-github fa-fw w3-margin-right"></i>
                 <a href="https://github.com/gabrielscheffer/dio-k8s-fundamentals-1" target="_blank">gabrielscheffer/dio-k8s-fundamentals-1</a>
               </h6>
-              <p>Bootcamp project developed during training which build, push and deploys a sample app into a local Kubernetes cluster.</p>
+              <p class="translate" data-i18n="dio-k8s-fundamentals-1">Bootcamp project developed during training which build, push and deploys a sample app into a local Kubernetes cluster.</p>
               <hr>
             </div>
             <div class="w3-container">
@@ -343,7 +330,7 @@
                 <i class="fa fa-github fa-fw w3-margin-right"></i>
                 <a href="https://github.com/gabrielscheffer/dio-k8s-fundamentals-2" target="_blank">gabrielscheffer/dio-k8s-fundamentals-2</a>
               </h6>
-              <p>Bootcamp project developed during training which build, push and deploys a sample app into a local Kubernetes cluster and also can be deployed into a Gitlab by using gitlab-ci.yaml.</p>
+              <p class="translate" data-i18n="ddio-k8s-fundamentals-2">Bootcamp project developed during training which build, push and deploys a sample app into a local Kubernetes cluster and also can be deployed into a Gitlab by using gitlab-ci.yaml.</p>
               <hr>
             </div>
           </div>
@@ -358,12 +345,41 @@
     </div>
   
     <footer class="w3-container w3-green w3-center w3-margin-top">
-      <p>Social Networks</p>
-      <a href="https://github.com/gabrielscheffer" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
-      <a href="https://www.linkedin.com/in/ogabrielzito/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+      <p class="translate" data-i18n="footer.socialMedia">My Social Media</p>
+      <a href="https://github.com/gabrielscheffer" target="_blank"><i class="fa fa-github w3-xxlarge w3-hover-opacity"></i></a>
+      <a href="https://www.linkedin.com/in/ogabrielzito/" target="_blank"><i class="fa fa-linkedin w3-xxlarge w3-hover-opacity"></i></a>
+      <p class="translate" data-i18n="footer.poweredBy">Powered by </p>
     </footer>
-  
+
+    <script>
+      i18next
+        .use(i18nextHttpBackend)
+        .init({
+          lng: 'en',
+          fallbackLng: 'en',
+          backend: {
+            loadPath: 'locales/{{lng}}/{{ns}}.json'
+          }
+        })
+        .then(() => {
+          translatePage();
+        });
+
+      function translatePage() {
+        const elements = document.querySelectorAll('.translate');
+        elements.forEach((element) => {
+          const key = element.dataset.i18n;
+          const translation = i18next.t(key);
+          element.innerHTML = translation;
+        });
+      }
+
+      function changeLanguage(language) {
+        i18next.changeLanguage(language, () => {
+          translatePage();
+        });
+      }
+    </script>
   </body>
 
 </html>
